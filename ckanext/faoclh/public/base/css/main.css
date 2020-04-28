@@ -4986,12 +4986,12 @@ a.label:focus {
   padding: 3px 7px;
   font-size: 12px;
   font-weight: bold;
-  color: #fff;
+  color: #0d6cac;
   line-height: 1;
   vertical-align: middle;
   white-space: nowrap;
   text-align: center;
-  background-color: #777777;
+  background-color: transparent;
   border-radius: 0;
 }
 .badge:empty {
@@ -5008,7 +5008,7 @@ a.label:focus {
 }
 a.badge:hover,
 a.badge:focus {
-  color: #fff;
+  color: #0d6cac;
   text-decoration: none;
   cursor: pointer;
 }
@@ -10839,8 +10839,9 @@ h5 {
   color: #999;
   font-weight: normal;
 }
-.dataset-heading {
-  font-weight: bold;
+.dataset-heading a {
+  color: #0d6cac;
+  font-weight: normal;
 }
 .context-info h1.heading {
   color: #0d6cac;
@@ -10881,9 +10882,42 @@ h5 {
 }
 .account-masthead {
   background-color: #0d6cac;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .account-masthead .account ul li {
-  border-left: 1px solid #1ea8e1;
+  border-left: 1px solid transparent;
+}
+.account-masthead .header-image img {
+  height: 50px;
+}
+.account-masthead hgroup {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 0 8px;
+}
+.account-masthead hgroup h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: normal;
+}
+.account-masthead hgroup .logo {
+  margin-right: 16px;
+  padding-right: 16px;
+  border-right: 1px solid #ffffff;
+}
+.account-masthead .account ul,
+.account-masthead .account ul li a {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  min-width: 60px;
+  justify-content: center;
+}
+.account-masthead .account ul li i {
+  font-size: 20px;
 }
 /* LANGUAGE SELECTOR */
 .language-header-container {
@@ -10936,20 +10970,17 @@ h5 {
 }
 /* FAO CARD */
 .fao-item-summary {
-  margin-left: 0;
-  margin-right: 0;
+  margin: 16px;
+  width: 220px;
   border-left: none;
   border-radius: 0;
   background: #ffffff;
   border: 1px solid #ddd;
   position: relative;
   padding: 0 0 0 0;
-  margin-bottom: 30px;
   min-height: 130px;
   transition: box-shadow 0.3s;
   overflow: hidden;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 .fao-item-summary a:hover {
   text-decoration: none;
@@ -10971,13 +11002,12 @@ h5 {
   color: #393939;
   min-height: 54px;
   color: #0d6cac;
-  text-align: center;
   min-height: 120px;
-  display: flex;
-  align-items: center;
 }
 .fao-item-summary .fao-item-title > * {
   width: 100%;
+  font-weight: normal;
+  margin: 0;
 }
 .fao-item-summary .fao-item-body {
   border-right: none;
@@ -11003,8 +11033,6 @@ h5 {
   box-sizing: border-box;
   border-top: 1px solid #dddddd;
   min-height: 30px;
-}
-.fao-item-summary .fao-item-body .fao-item-count strong {
   color: #444;
 }
 .fao-item-summary .fao-item-description {
@@ -11062,12 +11090,45 @@ h5 {
 }
 /* HOMEPAGE LAYOUT OVERRIDES */
 .homepage.layout-1 .module-search {
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: #f2f2f2;
+  color: #333333;
+}
+.homepage.layout-1 .module-search .module-content {
+  background-color: #f2f2f2;
+}
+.homepage.layout-1 .module-search .heading {
+  font-weight: normal;
+}
+.homepage.layout-1 .module-search .tags {
+  background-color: #f2f2f2;
+}
+.homepage.layout-1 .module-search .tags h3 {
+  font-weight: bold;
+}
+.homepage.layout-1 .module-search .tag {
+  color: #fff;
+  background-color: #0d6cac;
+  border-radius: 14px;
+  border: none;
+  min-width: 120px;
+  height: 28px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.homepage.layout-1 .module-search .tag:hover {
+  color: #dbe9f3;
+  background-color: #083f65;
+}
+.homepage.layout-1 .module-search .search-giant input {
+  border: 1px solid #ccc;
 }
 .homepage.layout-1 .fao-item-see-all {
   text-align: right;
   margin-top: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .homepage.layout-1 .container-fluid.box {
   background: #ffffff url(../../../base/images/bg.png);
@@ -11110,4 +11171,110 @@ h5 {
   box-shadow: none;
   border: none;
   border-radius: 0;
+}
+.homepage-main[role=main] {
+  padding: 0;
+  margin-bottom: 32px;
+}
+.jumbotron {
+  background-image: url(/base/images/fao/krisztian-tabori-KJ1ida5X2hg-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 16px;
+  filter: saturate(0.75);
+}
+.jumbotron .lead {
+  color: #ffffff;
+  font-weight: normal;
+  background-color: rgba(13, 108, 172, 0.8);
+  margin-top: 150px;
+  font-size: 14px;
+  padding: 32px;
+  width: 70%;
+}
+.fao-item-container .fao-item-container-head {
+  display: flex;
+  align-items: center;
+}
+.fao-item-container .fao-item-container-head h3 {
+  flex: 1;
+}
+.fao-item-container .fao-item-container-body {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.fao-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  align-items: center;
+  border-top: 2px solid #ddd;
+  font-size: x-small;
+}
+.fao-footer ul {
+  list-style-type: none;
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.fao-footer ul li {
+  padding: 0;
+  margin: 0;
+}
+.fao-footer ul li + li {
+  border-left: 2px solid #777;
+  padding-left: 12px;
+  margin-left: 12px;
+}
+.fao-disclaimer {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+}
+.fao-sidebar {
+  float: left;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+.fao-sidebar .fao-sidemenu {
+  border-bottom: 1px solid #ccc;
+}
+.fao-sidebar aside {
+  clear: both;
+  float: none;
+  width: 100%;
+}
+.fao-container {
+  width: calc(100% - 30px);
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .wrapper {
+    border: none;
+    background-color: transparent;
+  }
+  .wrapper .fao-sidebar {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: calc(25% - 16px);
+  }
+  .wrapper::before {
+    border: none;
+  }
+  .wrapper .primary {
+    background-color: #fff;
+    border: none;
+  }
+  .fao-container,
+  #content {
+    width: calc(100% - 64px);
+    max-width: 1600px;
+  }
 }
